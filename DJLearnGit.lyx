@@ -150,7 +150,109 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-这样就会得到一个.git目录
+这样就会得到一个.git目录。然后运行命令：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git commit -m ``The initial document (built in LyX) of the project: DJ
+ Learning Git"
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+就将文档提交到仓库中。
+\end_layout
+
+\begin_layout Standard
+在这之前可以进行一些自我介绍：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git config --global user.name ``Dazhi Jiang"
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git config --global user.email jiangdzh@gmail.com
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+在这个项目中，我可能会用到一些临时性的文档，但是我不希望这些文档出现在项目仓库中，为了简化步骤，可以采用如下方法：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ echo ``tmp" > .gitignore
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
