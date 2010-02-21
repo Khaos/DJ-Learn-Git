@@ -11,18 +11,36 @@
 %\setsansfont[BoldFont=SimHei]{KaiTi_GB2312}
 \setmainfont[BoldFont=SimHei,ItalicFont=SimHei]{SimSun}
 \setsansfont[BoldFont=SimHei]{SimHei}
-\setmonofont{NSimSun}
+%\setmonofont{NSimSun}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 
+\usepackage{upquote}
+
+\usepackage{xcolor}
+
 \usepackage[formats]{listings}
 
-\lstset{%language=Matlab,%
+%\lstset{%language=Matlab,%
 %	basicstyle={\lstbasicfont\small},
 %	keywordstyle=\color[rgb]{0,0,1},          % keywords
 %	commentstyle=\color[rgb]{0.133,0.545,0.133},  % comments
 %	stringstyle=\color[rgb]{0.627,0.126,0.941}, % strings
+%tabsize=4,
+%showstringspaces=false,
+%breaklines=true,
+%breakindent=0pt,
+%morekeywords={git}
+%}
+
+\lstset{language=bash,%
+basicstyle=\ttfamily\small,
+keywordstyle=\color{blue}\bfseries,          % keywords
+%	commentstyle=\color[rgb]{0.133,0.545,0.133},  % comments
+%	stringstyle=\color[rgb]{0.627,0.126,0.941}, % strings
 tabsize=4,
+%upquote=false, % For straight quote
+%escapechar=\%,
 showstringspaces=false,
 breaklines=true,
 breakindent=0pt,
@@ -118,7 +136,7 @@ The First Try
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -155,7 +173,7 @@ end{lstlisting}
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -166,7 +184,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-$ git commit -m ``The initial document (built in LyX) of the project: DJ
+$ git commit -m "The initial document (built in LyX) of the project: DJ
  Learning Git"
 \end_layout
 
@@ -179,20 +197,16 @@ end{lstlisting}
 
 \end_inset
 
- 
-\begin_inset Newline newline
-\end_inset
-
-就将文档提交到仓库中。
+ 就将文档提交到仓库中。
 \end_layout
 
 \begin_layout Standard
-在这之前可以进行一些自我介绍：
+在这之前可以进行一些自我介绍（这一步可以在一开始的时候就做）：
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -203,7 +217,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-$ git config --global user.name ``Dazhi Jiang"
+$ git config --global user.name "Dazhi Jiang"
 \end_layout
 
 \begin_layout Plain Layout
@@ -240,7 +254,11 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-$ echo ``tmp" > .gitignore
+$ echo "tmp" > .gitignore
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -253,6 +271,29 @@ end{lstlisting}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+将项目提交到远程仓库 (Remote Repository)
+\end_layout
+
+\begin_layout Standard
+首先，你需要建立一个远程仓库。比较好的有GitHub和Google Code。GitHub主要用Rails实现，其顾名思义提供了Git库的远程托管服务。只要在
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://github.com
+\end_layout
+
+\end_inset
+
+上注册你就免费拥有300Mb大小的空间，用于存储你的项目。对于一般用户，只能建立公共项目，这些项目是任何人都可以访问与fork的。
+\end_layout
+
+\begin_layout Standard
+注册完用户后，登录，之后要做的第一件事就是要产生并提交你的SSH key。
 \end_layout
 
 \end_body
