@@ -44,7 +44,7 @@ tabsize=4,
 showstringspaces=false,
 breaklines=true,
 breakindent=0pt,
-morekeywords={git}
+morekeywords={git, cd, ls, mkdir, cp, rm}
 }
 \end_preamble
 \use_default_options true
@@ -259,10 +259,6 @@ $ echo "tmp" > .gitignore
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 
 \backslash
 end{lstlisting}
@@ -293,7 +289,229 @@ http://github.com
 \end_layout
 
 \begin_layout Standard
-注册完用户后，登录，之后要做的第一件事就是要产生并提交你的SSH key。
+注册完用户后，登录，之后要做的第一件事就是要产生并提交你的SSH key。详细步骤可以参考GitHub上的帮助。
+\end_layout
+
+\begin_layout Standard
+首先，删除已有的SSH Key，命令如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ cd ~/.ssh 
+\end_layout
+
+\begin_layout Plain Layout
+
+$ ls 
+\end_layout
+
+\begin_layout Plain Layout
+
+config  id_rsa  id_rsa.pub  known_hosts 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$ mkdir key_backup 
+\end_layout
+
+\begin_layout Plain Layout
+
+$ cp id_rsa* key_backup 
+\end_layout
+
+\begin_layout Plain Layout
+
+$ rm id_rsa*
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+下面就可以产生SSH Key，如下所示：
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ ssh-keygen -t rsa -C "your_email_address@gmail.com" 
+\end_layout
+
+\begin_layout Plain Layout
+
+Generating public/private rsa key pair.
+ Enter file in which to save the key (/c/Users/Tekkub/.ssh/id_rsa): Enter
+ passphrase (empty for no passphrase): Enter same passphrase again: Your
+ identification has been saved in /c/Users/Tekkub/.ssh/id_rsa.
+ Your public key has been saved in /c/Users/Tekkub/.ssh/id_rsa.pub.
+ The key fingerprint is: e8:ae:60:8f:38:c2:98:1d:6d:84:60:8c:9e:dd:47:81
+ your_email_address@gmail.com
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这个过程当中，会提示输入密码，这个密码就是以后每次提交项目时需要输入的密码。之后就可以将这个SSH Key提交到GitHub上了。最后可以运行下面代码进行测试。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ ssh git@github.com 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hi tekkub! You've successfully authenticated, but GitHub does not provide
+ shell access.
+ Connection to github.com closed.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最后运行如下代码提交你的项目到远程仓库，
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git commit -a -m 'Some comments'
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git remote add origin git@github.com:Khaos/DJ-Learn-Git.git
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git push origin master
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+值得一提的是，如果在同一台机器再次提交项目，上述命令中的第二行可以省略（？）。
+\end_layout
+
+\begin_layout Standard
+$ git svn clone --username JiangDZH@gmail.com https://learngit.googlecode.com/s
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git svn clone --username JiangDZH@gmail.com https://learngit.googlecode.com/svn/t
+runk
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
