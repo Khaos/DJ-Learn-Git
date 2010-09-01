@@ -1,4 +1,4 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -136,7 +136,7 @@ The First Try
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -173,7 +173,7 @@ end{lstlisting}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -206,7 +206,7 @@ end{lstlisting}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -243,7 +243,7 @@ end{lstlisting}
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -270,7 +270,15 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Subsection
-将项目提交到远程仓库 (Remote Repository)
+与远程仓库 (Remote Repository) 交互使用
+\end_layout
+
+\begin_layout Subsubsection
+建立远程仓库
+\end_layout
+
+\begin_layout Paragraph
+GitHub
 \end_layout
 
 \begin_layout Standard
@@ -435,8 +443,24 @@ end{lstlisting}
 
 \end_layout
 
+\begin_layout Paragraph
+Gitorious
+\end_layout
+
+\begin_layout Paragraph
+Google Code
+\end_layout
+
+\begin_layout Paragraph
+SVN
+\end_layout
+
+\begin_layout Subsubsection
+提交 (Push) 项目
+\end_layout
+
 \begin_layout Standard
-最后运行如下代码提交你的项目到远程仓库，
+运行如下代码提交你的项目到远程仓库，
 \end_layout
 
 \begin_layout Standard
@@ -482,12 +506,53 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-$ git svn clone --username JiangDZH@gmail.com https://learngit.googlecode.com/s
+另外，你也可以命名多个远程仓库，这样做的原因可能是项目由于某些原因而转移的存储地址，下面是相关命令，
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git remote add origin1 git@gitorious.org.com:Khaos/DJ-Learn-Git.git
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git push origin1 master
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+克隆 (Clone) 项目
+\end_layout
+
+\begin_layout Standard
+下面命令可以让你从远程仓库中克隆项目至本地机器，
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -512,6 +577,30 @@ end{lstlisting}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+获取 (Fetch) 项目
+\end_layout
+
+\begin_layout Subsubsection
+合并 (Merge) 项目
+\end_layout
+
+\begin_layout Subsubsection
+获取且合并 (Pull) 项目
+\end_layout
+
+\begin_layout Section*
+Test
+\end_layout
+
+\begin_layout Standard
+¥
+\end_layout
+
+\begin_layout Section*
+Dump
 \end_layout
 
 \end_body
