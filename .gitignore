@@ -2,4 +2,5 @@ tmp
 recycle
 trunk
 DJLearnGit.*
+*DJLearnGit.*
 !DJLearnGit.lyx

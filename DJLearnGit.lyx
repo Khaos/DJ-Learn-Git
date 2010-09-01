@@ -552,7 +552,7 @@ end{lstlisting}
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -589,6 +589,62 @@ end{lstlisting}
 
 \begin_layout Subsubsection
 获取且合并 (Pull) 项目
+\end_layout
+
+\begin_layout Section
+在Dropbox上发布备份项目
+\end_layout
+
+\begin_layout Subsection
+安装Dropbox
+\end_layout
+
+\begin_layout Subsection
+与Git交互
+\end_layout
+
+\begin_layout Standard
+首先进入你的本地项目目录，运行
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git clone --bare .
+ PATH_TO_YOUR_LOCAL_DROPBOX/some-project.git
+\end_layout
+
+\begin_layout Plain Layout
+
+$ git remote add dropbox PATH_TO_YOUR_LOCAL_DROPBOX/some-project.git
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这两个命令中，第一个是将你本地项目的 .git 目录克隆至本地 Dropbox 对应目录下，并命名为 some-project.git。第二个是创建一个对应于新克隆
+目录的远程仓库，命名为 dropbox。这样以后如果需要同步更新 Dropbox 上面的项目，就用 dropbox 来代替前面命令中的 origin。事实上，这
+个 remote repository 是定义于 .git/config 文件中的。
 \end_layout
 
 \begin_layout Section*
