@@ -1,0 +1,45 @@
+#+STARTUP: indent
+#+STARTUP: content
+#+STARTUP: align
+
+#+TODO: TODO(t) DOING(i!) HANGUP(h!) | DONE(d!) CANCEL(c@!)
+#+TODO: 
+
+#+ TAGS:
+
+
+#+TITLE: DJ Learn Git
+#+AUTHOR: Dazhi Jiang
+#+EMAIL:  jiangdzh@gmail.com
+
+
+
+* Outlines
+
+** Preface
+- Editor: TextMate + Emacs
+- Version Control: Git, SmartGit
+- Remote Repository: Dropbox, github[fn:1]
+
+** Introduction
+- Purpose of this document
+- Who should read it
+
+* Dump
+
+** Command
+#+BEGIN_QUOTE
+git clone --bare . PATH_TO_YOUR_LOCAL_DROPBOX/some-project.git
+git remote add dropbox PATH_TO_YOUR_LOCAL_DROPBOX/some-project.git
+#+BEGIN_QUOTE
+
+* TODODump
+
+** TODO Instruction of Git+Dropbox
+
+
+
+
+* Footnotes
+
+[fn:1] This depends whether I want to open this document to the public.

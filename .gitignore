@@ -3,4 +3,6 @@ recycle
 trunk
 DJLearnGit.*
 *DJLearnGit.*
-!DJLearnGit.lyx
+!DJLearnGit*.lyx
+!DJLearnGit*.org
+!DJLearnGit*.tmproj
